@@ -1,0 +1,49 @@
+@function bp($bp){
+  @return map-get($breakpoint, $bp);
+}
+
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+@function jc($jc){
+  @return map-get($justify, $jc);
+}
+
+@function jc($ai){
+  @return map-get($align, $ai);
+}
+
+@mixin rwd($point){
+  @media only screen and (max-width: $point){
+    @content;
+  }     
+}
+
+@mixin mg($top: 0, $bottom: 0, $left: 0, $right: 0){
+  margin: {
+    top: #{$top}px;
+    bottom: #{$bottom}px;
+    left: #{$left}px;
+    right: #{$right}px;
+  }
+}
+
+@mixin pd($top: 0, $bottom: 0, $left: 0, $right: 0){
+  padding: {
+    top: #{$top}px;
+    bottom: #{$bottom}px;
+    left: #{$left}px;
+    right: #{$right}px;
+  }
+}
+
+@mixin fontStyle($color: black, $size: 1, $weight: 400, $style: normal) {
+  font: {
+    family: 'Roboto', 'Microsoft JhengHei', sans-serif;
+    weight: $weight;
+    size: #{$size}rem;
+    style: $style;
+  }
+  color: color($color);
+}

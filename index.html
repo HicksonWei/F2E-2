@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>filter</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <a href="#" class="logo">
+        <img src="./img/logo.svg" alt="logo">
+      </a>
+      <div class="search">
+        <a href="#" class="fas fa-search fa-lg"></a>
+        <input type="text" placeholder=" Explore your own activities" autocomplete="on">
+      </div>
+      <div class="search-burger"></div>
+    </header>
+    <section>
+      <aside>
+        <div class="sorting-column">
+          <div class="location-block">
+            <p class="sorting-title">Location</p>
+            <select>
+              <option value="Koahsiung">Koahsiung</option>
+              <option value="Taipei">Taipei</option>
+            </select>
+          </div>
+          <div class="date-block">
+            <p class="sorting-title">Date</p>
+            <div class="date_frame">
+              <div class="date_row">
+                <span>from</span><input type="date">
+              </div>
+              <div class="date_row">
+                <span>to</span><input type="date">
+              </div>
+            </div>
+          </div>
+          <div class="category-block">
+            <p class="sorting-title">Categories</p>
+            <div class="category-frame">
+              <input type="checkbox" id="all">
+              <label for="all">All</label>
+              <br>
+              <input type="checkbox" id="entertainment">
+              <label for="entertainment">Entertainment</label>
+              <br>
+              <input type="checkbox" id="food">
+              <label for="food">Food</label>
+              <br>
+              <input type="checkbox" id="learning">
+              <label for="learning">Learning</label>
+              <br>
+              <input type="checkbox" id="outdoors">
+              <label for="outdoors">Outdoors</label>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main>
+        <div class="status-field">
+          <p class="results-counting">Showing <span>15</span> results by...</p>
+          <div class="sorting-tags">
+            <span>Koahsiung<i class="far fa-times-circle fa-fw"></i></span>
+            <span>Entertainment<i class="far fa-times-circle fa-fw"></i></span>
+          </div>
+        </div>
+        <ul class="attractions-list">
+          <li class="list-item">
+            <div class="place-image"></div>
+            <div class="place-detail">
+              <h2 class="place-name">Kogi Cosby sweater.</h2>
+              <div class="place-introduce">
+                Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. 
+              </div>
+              <div class="detail_frame--1">
+                <span class="organizer">Ethan Foster</span>
+                <div class="tags_collection">
+                  <span class="place-tag">Entertainment</span>
+                </div>
+              </div>
+              <div class="detail_frame--2">
+                <span class="place-city">
+                  <i class="fas fa-map-marker-alt "></i>
+                  Kaohsiung City
+                </span>
+                <span class="validity-period">
+                  <i class="far fa-calendar-alt fa-fw"></i>
+                  2018/5/24 - 2018/5/31
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="place-image"></div>
+            <div class="place-detail">
+              <h2 class="place-name">Kogi Cosby sweater.</h2>
+              <div class="place-introduce">
+                Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. 
+              </div>
+              <div class="detail_frame--1">
+                <span class="organizer">Ethan Foster</span>
+                <div class="tags_collection">
+                  <span class="place-tag">Entertainment</span>
+                </div>
+              </div>
+              <div class="detail_frame--2">
+                <span class="place-city">
+                  <i class="fas fa-map-marker-alt "></i>
+                  Kaohsiung City
+                </span>
+                <span class="validity-period">
+                  <i class="far fa-calendar-alt fa-fw"></i>
+                  2018/5/24 - 2018/5/31
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="place-image"></div>
+            <div class="place-detail">
+              <h2 class="place-name">Kogi Cosby sweater.</h2>
+              <div class="place-introduce">
+                Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. 
+              </div>
+              <div class="detail_frame--1">
+                <span class="organizer">Ethan Foster</span>
+                <div class="tags_collection">
+                  <span class="place-tag">Entertainment</span>
+                </div>
+              </div>
+              <div class="detail_frame--2">
+                <span class="place-city">
+                  <i class="fas fa-map-marker-alt "></i>
+                  Kaohsiung City
+                </span>
+                <span class="validity-period">
+                  <i class="far fa-calendar-alt fa-fw"></i>
+                  2018/5/24 - 2018/5/31
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </main>
+    </section>
+    <footer>
+      <div class="pagination-block">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo;</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+  
+  </script>
+</body>
+</html>

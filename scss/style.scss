@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
+@import "variables";
+@import "mixin";
+@import "reset";
+
+body {
+  @include fontStyle;
+}
+
+
+// start
+
+.wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header{
+  height: 92px;
+  background-color: color(purple-dk);
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  position: relative;
+  @include mg($left: 78);
+  min-width: 158px;
+  height: 44px;
+  img{
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.search{
+  @include mg($left: 150);
+  position: relative;
+  .fa-search{
+    position: absolute;
+    color: color(white);
+    top: 12px;
+    left: 5px;
+  }
+  input[type="text"]{
+    background-color: color(purple-dk);
+    width: 390px;
+    height: 40px;
+    @include fontStyle(white, 1.25, 500);
+    border-bottom: 2px solid color(white);
+    @include pd($top: 2, $left: 40);
+    &::placeholder{
+      @include fontStyle(white0.5, 1.25, 400, italic);
+    }
+  }
+}
+
+section{
+  display: flex;
+  background-color: color(gray-1);
+  @include pd($left: 40, $right: 40);
+}
+
+.sorting-column{
+  width: 300px;
+  background-color: color(gray-2);
+  @include mg($right: 40);
+}
+
+.location-block, .date-block, .category-block{
+  @include pd($top: 25, $bottom: 25, $left: 40, $right: 40);
+  .sorting-title{
+    @include fontStyle($size: 1.25, $weight: 700);
+  }
+}
+
+.location-block{
+  border-bottom: 1px solid color(gray-3);
+  .sorting-title{
+    @include mg($bottom: 15);
+  }
+  select{
+    border: 0;
+    height: 40px;
+    width: 100%;
+    @include pd($left: 8);
+  }
+}
+
+.date-block{
+  border-bottom: 1px solid color(gray-3);
+  .sorting-title{
+    @include mg($bottom: 25);
+  }
+  .date_frame{
+    display: flex;
+    flex-direction: column;
+    .date_row{
+      display: flex;
+      line-height: 40px;
+      @include mg($bottom: 8);
+    }
+    span{
+      display: block;
+      width: 50px;
+      text-align: right;
+      @include pd($right: 12);
+      height: 40px;
+    }
+    input{
+      display: block;
+      width: calc(100% - 50px);
+      height: 40px;
+      border: 0;
+    }
+  }
+}
+
+.category-block{
+  .sorting-title{
+    @include mg($bottom: 25);
+  }
+}
+
+main{
+  width: calc(100% - 340px);
+}
+
+.status-field{
+  @include mg($top: 24, $bottom: 24);
+  .results-counting{
+    @include fontStyle($size: 1.5);
+    span{
+      @include fontStyle($color: purple-lt, $size: 1.5, $weight: 700);
+      line-height: 28px;
+    }
+  }
+  .sorting-tags{
+    @include mg($top: 8);
+    span{
+      @include pd($top: 8, $bottom: 8, $left: 16, $right: 16);
+      @include fontStyle($color: purple-lt, $style: italic);
+      display: inline-block;
+      border: 1px solid color(purple-lt);
+      border-radius: 100px;
+      cursor: pointer;
+      i{
+        @include mg($left: 8);
+      }
+      &:hover{
+        @include fontStyle($color: white, $style: italic);
+        background-color: color(purple-lt);
+      }
+    }
+  }
+}
+
+.list-item{
+  display: flex;
+  max-width: 780px;
+  min-height: 220px;
+  background-color: color(white);
+  @include mg($bottom: 24);
+}
+
+.place-image{
+  width: 220px;
+  min-height: 100%;
+  background-image: url('http://via.placeholder.com/220x220');
+  background-size: cover;
+  background-position: center;
+}
+
+.place-detail{
+  min-height: 100%;
+  width: calc(100% - 220px);
+  @include pd($top: 24, $bottom: 24, $left: 20, $right: 20);
+}
+
+.place-name{
+  @include fontStyle(purple-lt, 1.5, 700);
+  line-height: 36px;
+  @include mg($bottom: 16);
+}
+
+.place-introduce{
+  line-height: 24px;
+  @include mg($bottom: 16);
+}
+
+.detail_frame--1{
+  display: flex;
+  @include mg($bottom: 16);
+  .organizer{
+    @include fontStyle($weight: 700);
+    @include mg($right: 20);
+  }
+  .tags_collection{
+    .place-tag{
+      @include fontStyle($color: white, $style: italic);
+      @include pd($top: 2, $bottom: 2, $left: 16, $right: 16);
+      background-color: color(gray-3);
+      text-align: center;
+      border-radius: 100px;
+    }
+  }
+}
+
+.detail_frame--2{
+  display: flex;
+  @include fontStyle(gray-4);
+  .place-city{
+    @include mg($right: 20);
+    .fa-map-marker-alt{
+      @include mg($right: 5);
+    }
+  }
+  .validity-period{
+    .fa-calendar-alt{
+      @include mg($right: 5);
+    }
+  }
+}
+
+footer{
+  background-color: color(gray-1);
+  display: flex;
+  justify-content: flex-end; 
+  @include pd($bottom: 24, $left: 40, $right: 40);
+  .pagination-block{
+    display: flex;
+    a{
+      @include pd($top: 10, $bottom: 10, $left: 16, $right: 16);
+      @include fontStyle(purple-lt);
+      background-color: color(white);
+      line-height: 21px;
+      border: 1px solid color(gray-2);
+      &:not(:first-child){
+        border-left: none;
+      }
+      &.active{
+        background-color: color(purple-lt);
+        color: color(white);
+      }
+      &:hover:not(.active){
+        background-color: color(gray-1);
+      }
+      &:first-child{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:last-child{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+
+  }
+}
+
+
